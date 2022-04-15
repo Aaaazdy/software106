@@ -2,11 +2,17 @@ package Entity;
 
 import java.util.LinkedList;
 
-public class BookingInformation
-{
+public class BookingInformation{
 
+    private String filePath;
+    private String flightNo;
+    private String startWhere;
+    private String destWhere;
+    private String duringTime;
     private String firstName;
     private String lastName;
+    private String idNo;
+    private int BookingNo;
     private String flightNumber;
     private String boardingTime;
     private String boardingGate;
@@ -18,11 +24,7 @@ public class BookingInformation
     private String securCode;
     private int extraServiceFee;
     private LinkedList<String> extraService = new LinkedList<String>();
-
-    public BookingInformation()
-    {
-        extraService.add("coca cola");
-        extraService.add("Extra legroom");
+    public BookingInformation(){
         firstName = "firstName";
         lastName = "lastName";
         flightNumber = "AC1234";
@@ -30,43 +32,34 @@ public class BookingInformation
         seat = "12A";
         primaryFood = "box lunch";
     }
-
     public String getFirstName()
     {
         return firstName;
     }
-
     public void setFirstName(String firstName)
     {
         this.firstName = firstName;
     }
-
     public String getLastName()
     {
         return lastName;
     }
-
     public void setLastName(String lastName)
     {
         this.lastName = lastName;
     }
-
-
     public String getFlightNumber()
     {
         return flightNumber;
     }
-
     public void setFlightNumber(String flightNumber)
     {
         this.flightNumber = flightNumber;
     }
-
     public String getBoardingTime()
     {
         return boardingTime;
     }
-
     public void setBoardingTime(String boardingTime)
     {
         this.boardingTime = boardingTime;
@@ -155,6 +148,25 @@ public class BookingInformation
         extraService.add(item);
     }
 
+    public String getFlightNo() {
+        return flightNo;
+    }
+
+    public String getStartWhere() {
+        return startWhere;
+    }
+
+    public String getDestWhere() {
+        return destWhere;
+    }
+
+    public String getDuringTime() {
+        return duringTime;
+    }
+
+    public int getBookingNo() {
+        return BookingNo;
+    }
     public String getExtraService()
     {
         String retString = "";
@@ -164,4 +176,41 @@ public class BookingInformation
         }
         return retString;
     }
+
+    public void setFlightNo(String flightNo) {
+        this.flightNo = flightNo;
+    }
+
+    public void setStartWhere(String startWhere) {
+        this.startWhere = startWhere;
+    }
+
+    public void setDestWhere(String destWhere) {
+        this.destWhere = destWhere;
+    }
+
+    public void setDuringTime(String duringTime) {
+        this.duringTime = duringTime;
+    }
+
+    public void setBookingNo(int bookingNo) {
+        BookingNo = bookingNo;
+    }
+
+    public String getIdNo() {
+        return idNo;
+    }
+
+    public void setIdNo(String idNo) {
+        this.idNo = idNo;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
 }

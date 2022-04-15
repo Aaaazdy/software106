@@ -1,0 +1,4 @@
+# idea upload filter
+.idea
+*.iml
+out

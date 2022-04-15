@@ -2,30 +2,41 @@ package Boundary;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.TitledBorder;
+import java.util.List;
 
-import Entity.BookingInformation;
+public class AdditionalServiceView extends JPanel{
 
-public class ServiceAddition extends JFrame implements ActionListener
-{
-    LinkedList<JCheckBox> options = new LinkedList<JCheckBox>();
-    LinkedList<String> content = new LinkedList<String>();
+    public LinkedList<JCheckBox> options = new LinkedList<JCheckBox>();
 
-    JButton button1;//next step button
-    JButton button2;//clear button
-    JButton button3;//count button
-    JButton button4;//reset button
+    public LinkedList<String> content = new LinkedList<String>();
+    public JButton button1;//next step button
+    public JButton button2;//back button
 
-    private int checkCount = 0;//used to count the total money
-    //entity
-    BookingInformation customer1;
+    public JButton button3;//count button
 
-    public ServiceAddition(BookingInformation customer)
-    {
+    public JButton button4;//reset button
+
+    public int checkCount = 0;//used to count the total money
+    private List<ActionListener> listeners;
+
+    public void addActionListener(ActionListener actionlistener){
+        listeners.add(actionlistener);
+    }
+
+    public AdditionalServiceView(){
+        listeners=new ArrayList<ActionListener>();
+        setLayout(new GridLayout(5, 1));
+        JPanel p1 = new JPanel(new BorderLayout());
+        JPanel p2 = new JPanel();
+        JPanel p3 = new JPanel();
+        JPanel p4 = new JPanel();
+        JPanel p5 = new JPanel();
+
         options.add(new JCheckBox("extraLegroom"));
         options.add(new JCheckBox("moviePlayer"));
         options.add(new JCheckBox("blanket"));
@@ -36,18 +47,6 @@ public class ServiceAddition extends JFrame implements ActionListener
         options.add(new JCheckBox("coffee"));
         options.add(new JCheckBox("steak"));
         options.add(new JCheckBox("salad"));
-        this.customer1 = customer;
-        //initialize the first page setup
-        setLayout(new GridLayout(5, 1));
-        setSize(1280, 720);
-        setTitle("British Airways");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //9 panels of the first page
-        JPanel p1 = new JPanel(new BorderLayout());
-        JPanel p2 = new JPanel();
-        JPanel p3 = new JPanel();
-        JPanel p4 = new JPanel();
-        JPanel p5 = new JPanel();
 
         //panel 1
         JLabel label1 = new JLabel("Please choose your meal during flight:", JLabel.CENTER);
@@ -73,19 +72,44 @@ public class ServiceAddition extends JFrame implements ActionListener
 
         //panel 4
         button3 = new JButton("count");
-        button3.addActionListener(this);
         button3.setSize(160, 150);
-        p4.add(button3);
         button4 = new JButton("reset");
-        button4.addActionListener(this);
         button4.setSize(160, 150);
+        button3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                for(int i=0;i<listeners.size();++i){
+                    listeners.get(i).actionPerformed(e);
+                }
+            }
+        });
+        button4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                for(int i=0;i<listeners.size();++i){
+                    listeners.get(i).actionPerformed(e);
+                }
+            }
+        });
+
+        p4.add(button3);
         p4.add(button4);
 
         //panel 5
         button1 = new JButton("Back");
         button2 = new JButton("Next");
-        button1.addActionListener(this);
-        button2.addActionListener(this);
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                for(int i=0;i<listeners.size();++i){
+                    listeners.get(i).actionPerformed(e);
+                }
+            }
+        });
+        button2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                for(int i=0;i<listeners.size();++i){
+                    listeners.get(i).actionPerformed(e);
+                }
+            }
+        });
         button1.setSize(180, 160);
         button2.setSize(180, 160);
         p5.add(button1);
@@ -97,13 +121,8 @@ public class ServiceAddition extends JFrame implements ActionListener
         add(p3);
         add(p4);
         add(p5);
+
     }
-
-
-    /**
-     * when there are missing parts of the needed information and user click next,this method will be called
-     * to create a pop-up window to tell the user.
-     */
     public void showMessage2()
     {
         JOptionPane.showMessageDialog(this, "Please choose an item", "Wrong information",
@@ -118,7 +137,7 @@ public class ServiceAddition extends JFrame implements ActionListener
 
     public void showMessage4(int count)
     {
-        JOptionPane.showMessageDialog(this, "The total money is :  " + count + "$", "the choosed services",
+        JOptionPane.showMessageDialog(this, "The total money is :  " + "$" + count , "the choosed services",
                 JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -201,54 +220,4 @@ public class ServiceAddition extends JFrame implements ActionListener
             iter.remove();
         }
     }
-
-    /**
-     * when user click any button,this method will called to specify which button that user has clicked
-     * and then perform respond action.
-     *
-     * @param e action event
-     */
-    public void actionPerformed(ActionEvent e)
-    {
-        //to record which button that user has clicked
-        JButton eventSource = (JButton) e.getSource();
-
-        if (eventSource.equals(button1))            //back
-        {
-            new MealSelect(this.customer1).setVisible(true);
-            setVisible(false);
-            dispose();
-            //hid and dispose the page
-        } else if (eventSource.equals(button2))     //Next button
-        {
-            checkCount = 0;
-            check();
-            count();
-            customer1.setExtraServiceFee(checkCount);
-            for (String a : content)
-            {
-                customer1.setExtraService(a);
-            }
-            //go to next page:
-            new Creditcard(this.customer1).setVisible(true);
-            setVisible(false);
-            dispose();
-            //hid and dispose the page
-
-        } else if (eventSource.equals(button3))     //count button
-        {
-            check();
-            count();
-
-        } else if (eventSource.equals(button4))     //reset button
-        {
-            reset();
-            count();
-        }
-    }
 }
-
-
-
-
-

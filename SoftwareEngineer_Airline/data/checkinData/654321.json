@@ -1,13 +1,14 @@
 {
-  "bookingNo":654321,
+  "BookingNo":654321,
   "firstName":"Tom",
   "lastName":"Shelby",
    "idNo":"123123123",
-  "flightNumber":"978-0321336781",
+  "flightNumber":"AC1270",
   "boardingTime":"2022-4-18 20:00",
   "boardingGate":"20D",
   "flightNo":"1234D",
   "startWhere":"Birmingham",
   "destWhere":"London",
-  "duringTime":"20:30-00:40(+1)"
+  "duringTime":"20:30-00:40(+1)",
+  "checkin":false
 }

@@ -2,6 +2,7 @@ package Controller;
 
 import Boundary.IDNoCheckinView;
 import Entity.BookingInformation;
+import Tool.FileReaderWriter;
 import Tool.JsonTool;
 
 import javax.swing.*;
@@ -45,7 +46,8 @@ public class IDNoCheckinController implements Controller{
                     String inputIDNumber=idNoCheckinView.field2.getText();
                     boolean valid=false;
                     try {
-                        valid=searchBooingInfo(inputSurname,inputIDNumber);
+                        //valid=searchBooingInfo(inputSurname,inputIDNumber);
+                        valid= FileReaderWriter.searchBooingInfo(inputSurname,inputIDNumber,bookingInfoList);
                     } catch (IOException ex) {
                         throw new RuntimeException(ex);
                     }
@@ -74,51 +76,5 @@ public class IDNoCheckinController implements Controller{
     public void startLastPage() {
         new CheckinController().startPage();
     }
-    private boolean searchBooingInfo(String inputSurName,String inputIDno) throws IOException {
-        String path="data//bookingInfo";
-        File file = new File(path);
-        File[] files = file.listFiles();
-        ArrayList<String> foundPath=new ArrayList<String>();
-        for (int i = 0; i < files.length; i++) {
-            String filePath=files[i].getPath();
-            FileInputStream fin = new FileInputStream(filePath);
-            InputStreamReader reader = new InputStreamReader(fin);
-            BufferedReader buffReader = new BufferedReader(reader);
-            String strTmp = "";
-            boolean surnameSame=false;
-            boolean idNoSame=false;
-            while((strTmp = buffReader.readLine())!=null){
-                if(strTmp.contains("lastName")){
-                    String[] tmpStr1=strTmp.split(":");
-                    //System.out.println(tmpStr1[1].substring(1,tmpStr1[1].length()-2));
-                    if(tmpStr1[1].substring(1,tmpStr1[1].length()-2).equals(inputSurName)){
-                        surnameSame=true;
-                    }
-                }
-                if(strTmp.contains("idNo")){
-                    String[] tmpStr1=strTmp.split(":");
-                    //System.out.println(tmpStr1[1].substring(1,tmpStr1[1].length()-2));
-                    if(tmpStr1[1].substring(1,tmpStr1[1].length()-2).equals(inputIDno)){
-                        idNoSame=true;
-                    }
-                }
-            }
-            buffReader.close();
-            if(surnameSame==true&&idNoSame==true){
-                foundPath.add(filePath);
-            }
-        }
-        if(foundPath.size()==0){
-            return false;
-        }
-        else{
-            //creat objects
-            JsonTool tool=new JsonTool();
-            for(String tmpPath:foundPath){
-                System.out.println(tmpPath);
-                bookingInfoList.add(tool.createBookingInfo(tmpPath));
-            }
-            return true;
-        }
-    }
+
 }

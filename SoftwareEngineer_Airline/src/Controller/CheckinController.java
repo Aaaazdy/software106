@@ -2,6 +2,7 @@ package Controller;
 
 import Boundary.CheckinView;
 import Entity.BookingInformation;
+import Tool.FileReaderWriter;
 import Tool.JsonTool;
 
 import javax.swing.*;
@@ -11,7 +12,6 @@ import java.io.*;
 import java.util.ArrayList;
 public class CheckinController implements Controller{
     private CheckinView checkinView;
-
 
     public  ArrayList<BookingInformation> bookingInfoList;
 
@@ -58,7 +58,8 @@ public class CheckinController implements Controller{
                     }
                     else{
                         try {
-                            valid=searchBookingNo(inputNo);
+                            //valid=searchBookingNo(inputNo);
+                            valid= FileReaderWriter.searchBookingNo(inputNo,bookingInfoList);
                         } catch (IOException ex) {
                             System.out.println("error in search inputNO!");
                         }
@@ -87,7 +88,8 @@ public class CheckinController implements Controller{
                     int inputNo=123456;
                     boolean valid=false;
                     try {
-                        valid=searchBookingNo(inputNo);
+                        //valid=searchBookingNo(inputNo);
+                        valid= FileReaderWriter.searchBookingNo(inputNo,bookingInfoList);
                     } catch (IOException ex) {
                         System.out.println("error in search inputNO! ID card Scan");
                     }
@@ -118,51 +120,4 @@ public class CheckinController implements Controller{
         new IDNoCheckinController().startPage();
     }
 
-    /**
-     * Search and tell if the input bookingNo exist,if it exists, generate the entity object
-     * @param inputBookingNo
-     * @return
-     */
-    public  boolean searchBookingNo(int inputBookingNo) throws IOException {
-        String path="data//bookingInfo";
-        File file = new File(path);
-        File[] files = file.listFiles();
-        boolean found=false;
-        ArrayList<String> foundPath=new ArrayList<String>();
-        for (int i = 0; i < files.length; i++) {
-            String filePath=files[i].getPath();
-            FileInputStream fin = new FileInputStream(filePath);
-            InputStreamReader reader = new InputStreamReader(fin);
-            BufferedReader buffReader = new BufferedReader(reader);
-            String strTmp = "";
-            while((strTmp = buffReader.readLine())!=null){
-                if(strTmp.contains("bookingNo")){
-                    String[] tmpStr1=strTmp.split(":");
-                    String[] tmpStr2=tmpStr1[1].split(",");
-                    int tmpBookingNo=Integer.parseInt(tmpStr2[0]);
-                    if(tmpBookingNo==inputBookingNo){
-                        found=true;
-                        break;
-                    }
-                }
-            }
-            buffReader.close();
-            if(found){
-                foundPath.add(filePath);
-                found=false;
-            }
-        }
-        if(foundPath.size()==0){
-            return false;
-        }
-        else{
-            //creat objects
-            JsonTool tool=new JsonTool();
-            for(String tmpPath:foundPath){
-                System.out.println(tmpPath);
-                bookingInfoList.add(tool.createBookingInfo(tmpPath));
-            }
-            return true;
-        }
-    }
 }

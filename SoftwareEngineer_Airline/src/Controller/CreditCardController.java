@@ -52,8 +52,8 @@ public class CreditCardController implements Controller{
 
                         bookingInformation.setCredNumber(creditcardView.creditNum.getText());
                         bookingInformation.setSecurCode(creditcardView.securCode.getText());
-                        bookingInformation.setFirstName(creditcardView.firstName.getText());
-                        bookingInformation.setLastName(creditcardView.lastName.getText());
+                        bookingInformation.setCredFirst(creditcardView.firstName.getText());
+                        bookingInformation.setCredSecond(creditcardView.lastName.getText());
 
                         //go to next page:
                         frame.setVisible(false);//hid and dispose the first page

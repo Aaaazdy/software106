@@ -15,7 +15,7 @@ public class JsonTool
         Gson gson = new Gson();
         try
         {
-            DataOutputStream out = new DataOutputStream(new FileOutputStream(".\\BookingInformation.txt"));
+            DataOutputStream out = new DataOutputStream(new FileOutputStream("\\BookingInformation.txt"));
         } catch (Exception e)
         {
 
@@ -40,7 +40,7 @@ public class JsonTool
         return gson.fromJson(jsonString, BookingInformation.class);
     }
 /*    public static void main(String args[]) throws IOException {
-        String filePath = "data//bookingInfo//passenger231.txt";
+        String filePath = "data//bookingInfo//";
         FileInputStream fin = new FileInputStream(filePath);
         InputStreamReader reader = new InputStreamReader(fin);
         BufferedReader buffReader = new BufferedReader(reader);

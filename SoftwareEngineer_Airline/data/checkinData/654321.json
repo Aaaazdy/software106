@@ -7,6 +7,7 @@
   "boardingTime":"2022-4-18 20:00",
   "boardingGate":"20D",
   "flightNo":"1234D",
+  "planeModel":"2",
   "startWhere":"Birmingham",
   "destWhere":"London",
   "duringTime":"20:30-00:40(+1)",

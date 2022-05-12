@@ -9,9 +9,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class FileReaderWriter {
-    private static String checkinDataFiles = "data//checkinData";
+    private static String checkinDataFiles ="SoftwareEngineer_Airline\\data\\checkinData";
 
-    private static String printerDataFiles = "data//printerData//";
+    private static String printerDataFiles = "SoftwareEngineer_Airline\\data\\printerData";
 
     private static String passengerDataFiles = "test.txt";
 

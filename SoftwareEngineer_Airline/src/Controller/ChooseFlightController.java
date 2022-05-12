@@ -58,7 +58,7 @@ public class ChooseFlightController implements Controller {
     public void startNextPage(BookingInformation bookingInfo) {
         new ChooseSeatController(bookingInfoList,bookingInfo).startPage();
     }
-
+// any constructor that requires seatcontroller needs to add a model
     private void addFlightInfo(){
         int cnt=1;
         for(BookingInformation x:bookingInfoList){

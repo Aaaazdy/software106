@@ -64,9 +64,6 @@ public class ChooseMealController implements Controller{
                         frame.dispose();
                         startNextPage();
                     }
-
-
-
                 }
             }
         });

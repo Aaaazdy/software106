@@ -2,23 +2,19 @@ package Entity;
 
 import java.util.LinkedList;
 
-public class BookingInformation
-{
+public class BookingInformation{
 
+    private String filePath;
     private String flightNo;
-
     private String startWhere;
-
     private String destWhere;
-
     private String duringTime;
     private String firstName;
     private String lastName;
-
     private String idNo;
-
     private int BookingNo;
     private String flightNumber;
+    private int planeModel;
     private String boardingTime;
     private String boardingGate;
     private String seat;
@@ -29,9 +25,7 @@ public class BookingInformation
     private String securCode;
     private int extraServiceFee;
     private LinkedList<String> extraService = new LinkedList<String>();
-
-    public BookingInformation()
-    {
+    public BookingInformation(){
         firstName = "firstName";
         lastName = "lastName";
         flightNumber = "AC1234";
@@ -39,43 +33,42 @@ public class BookingInformation
         seat = "12A";
         primaryFood = "box lunch";
     }
-
     public String getFirstName()
     {
         return firstName;
     }
-
     public void setFirstName(String firstName)
     {
         this.firstName = firstName;
     }
-
     public String getLastName()
     {
         return lastName;
     }
-
     public void setLastName(String lastName)
     {
         this.lastName = lastName;
     }
-
-
     public String getFlightNumber()
     {
         return flightNumber;
     }
-
     public void setFlightNumber(String flightNumber)
     {
         this.flightNumber = flightNumber;
     }
-
+    public int getPlaneModel()
+    {
+        return planeModel;
+    }
+    public void setPlaneModel(int planemodel)
+    {
+         this.planeModel = planemodel;
+    }
     public String getBoardingTime()
     {
         return boardingTime;
     }
-
     public void setBoardingTime(String boardingTime)
     {
         this.boardingTime = boardingTime;
@@ -219,6 +212,14 @@ public class BookingInformation
 
     public void setIdNo(String idNo) {
         this.idNo = idNo;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
     }
 
 }

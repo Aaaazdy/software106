@@ -1,0 +1,9 @@
+{
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "SoftwareEngineer_Airline/lib/gson-2.8.4.jar"
+  ],
+  "code-runner.fileDirectoryAsCwd": true,
+  "python.terminal.executeInFileDir": true,
+  "files.autoGuessEncoding": true
+}

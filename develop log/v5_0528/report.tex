@@ -1,0 +1,67 @@
+\documentclass{layout/tudelft-report}
+
+%% Setting up the bibliography
+\usepackage{biblatex}
+\addbibresource{report.bib}
+
+\usepackage[UTF8]{ctex}
+%% Additional packages and commands
+\setlist{itemsep=-2pt} % Reducing white space in lists slightly
+\renewcommand{\deg}{\si{\degree}\xspace} % Use \deg easily, everywhere
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Begin of document %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%% Roman page numbering
+\frontmatter
+
+%% Defining the main parameters
+\title{\textbf{Group Project Report}}
+\subtitle{A smart flight check-in kiosk \\ ——developing the software using Agile Methods}
+\author{\textbf{Designed by group 106}}
+\subject{EBU6304: SOFTWARE ENGINEERING}
+
+\coverimage{figures/cover.pdf} % Aspect ratio of 2:3 (portrait) recommended
+\definecolor{title}{HTML}{4884d6} % Color for title
+
+
+\input{frontmatter/title-report}
+\input{frontmatter/preface}
+\input{frontmatter/summary}
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\input{frontmatter/nomenclature}
+
+%% Arabic page numbering
+\mainmatter
+
+\input{mainmatter/chapter-1}
+
+\input{mainmatter/chapter-2}
+\input{mainmatter/chapter-3}
+%\input{mainmatter/chapter-4} % Create file to add
+
+\input{mainmatter/conclusion}
+
+%% Prevent urls running into margins in bibliography
+\setcounter{biburlnumpenalty}{7000}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{7000}
+
+%% Add bibliography
+\printbibliography[heading=bibintoc,title=References]
+
+%% Letters for chapters
+\appendix
+
+\input{appendix/appendix-a}
+\input{appendix/appendix-b}
+%\input{appendix/appendix-c} % Create file to add
+
+\end{document}

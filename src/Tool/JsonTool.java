@@ -38,23 +38,6 @@ public class JsonTool
         Gson gson = new Gson();
         return gson.fromJson(jsonString, BookingInformation.class);
     }
-/*    public static void main(String args[]) throws IOException {
-        String filePath = "data//bookingInfo//";
-        FileInputStream fin = new FileInputStream(filePath);
-        InputStreamReader reader = new InputStreamReader(fin);
-        BufferedReader buffReader = new BufferedReader(reader);
-        String strTmp = "";
-        String jsonString="";
-        while((strTmp = buffReader.readLine())!=null){
-            if(strTmp.equals("{")&&strTmp.equals("}")){
-                continue;
-            }
-            else{
-                jsonString+=strTmp;
-            }
-        }
-        buffReader.close();
-    }*/
 
 
 

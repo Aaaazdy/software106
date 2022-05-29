@@ -13,7 +13,6 @@ public class FileReaderWriter {
 
     private static String printerDataFiles = "data//printerData//";
 
-
     private static String flightDataFiles = "data//flightData//";
 
     private static String passengerDataFiles = "test.txt";

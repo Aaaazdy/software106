@@ -106,11 +106,11 @@ public class CreditcardView extends JPanel{
                 JOptionPane.ERROR_MESSAGE);
     }
 
-    //
-    // When this method is called,it will check that weather all the information has been input
-    //@param values all the information that needed to complete
-    //@return boolean it will return true if it is qualified to go to the next page,return false if no.
-    //
+
+    /**
+     *  When this method is called,it will check that weather all the information has been input
+     * @return boolean it will return true if it is qualified to go to the next page,return false if no.
+     */
     public boolean checkQualified()
     {
         if (firstName.getText().equals("") || lastName.getText().equals("") ||

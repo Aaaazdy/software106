@@ -72,6 +72,10 @@ public class CreditCardController implements Controller{
                         frame.dispose();
                         //new ConfirmationController(this.customer1).startPage();
 
+                        frame.setVisible(false);
+                        frame.dispose();
+                        startNextPage();
+
                     } else
                     {
                         creditcardView.showMessage1();
@@ -80,9 +84,7 @@ public class CreditCardController implements Controller{
                         creditcardView.firstName.setText("");
                         creditcardView.lastName.setText("");
                     }
-                    frame.setVisible(false);
-                    frame.dispose();
-                    startNextPage();
+
                 }
 
             }

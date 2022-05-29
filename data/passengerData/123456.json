@@ -10,7 +10,7 @@
   "startWhere":"London",
   "destWhere":"Birmingham",
   "duringTime":"20:30-00:40(+1)",
-  "checkin":true,
+  "checkin":false,
   "seat":"12E",
   "primaryFood":"Sandwich",
   "credFirst":"null",

@@ -8,6 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * The controller of AdditionalService page
+ */
 public class AdditionalServiceController implements Controller{
 
     AdditionalServiceView additionalServiceView;
@@ -16,12 +19,20 @@ public class AdditionalServiceController implements Controller{
 
     BookingInformation bookingInformation;
 
+    /**
+     * Constructor of page controller
+     * @param bookingInformationArrayList all the booked flight information
+     * @param bookingInfo the flight information that is under checkin
+     */
     public AdditionalServiceController(ArrayList<BookingInformation> bookingInformationArrayList, BookingInformation bookingInfo){
         additionalServiceView=new AdditionalServiceView();
         bookingInformationList=bookingInformationArrayList;
         bookingInformation=bookingInfo;
     }
 
+    /**
+     * lunch page method
+     */
     public void startPage(){
         JFrame frame =new JFrame("British Airways");
         frame.setSize(525,380);
@@ -88,6 +99,11 @@ public class AdditionalServiceController implements Controller{
     public void startLastPage() {
         new ChooseMealController(bookingInformationList,bookingInformation).startPage();
     }
+
+    /**
+     * Start the credit card information input page
+     * if user want to buy something this page will be lunched.
+     */
     public void startCreditcardPage(){
         new CreditCardController(bookingInformationList,bookingInformation).startPage();
     }

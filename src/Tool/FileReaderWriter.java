@@ -125,7 +125,6 @@ public class FileReaderWriter {
             //creat objects
             JsonTool tool=new JsonTool();
             for(String tmpPath:foundPath){
-                System.out.println(tmpPath);
                 bookingInfoList.add(tool.createBookingInfo(tmpPath));
                 bookingInfoList.get(bookingInfoList.size()-1).setFilePath(tmpPath);
             }
@@ -156,14 +155,12 @@ public class FileReaderWriter {
             while((strTmp = buffReader.readLine())!=null){
                 if(strTmp.contains("lastName")){
                     String[] tmpStr1=strTmp.split(":");
-                    //System.out.println(tmpStr1[1].substring(1,tmpStr1[1].length()-2));
                     if(tmpStr1[1].substring(1,tmpStr1[1].length()-2).equals(inputSurName)){
                         surnameSame=true;
                     }
                 }
                 if(strTmp.contains("idNo")){
                     String[] tmpStr1=strTmp.split(":");
-                    //System.out.println(tmpStr1[1].substring(1,tmpStr1[1].length()-2));
                     if(tmpStr1[1].substring(1,tmpStr1[1].length()-2).equals(inputIDno)){
                         idNoSame=true;
                     }
@@ -189,7 +186,6 @@ public class FileReaderWriter {
             //creat objects
             JsonTool tool=new JsonTool();
             for(String tmpPath:foundPath){
-                System.out.println(tmpPath);
                 bookingInfoList.add(tool.createBookingInfo(tmpPath));
             }
             return true;
@@ -216,7 +212,6 @@ public class FileReaderWriter {
                         String[] tmpStr1=strTmp.split(":");
                         String[] tmpStr2=tmpStr1[1].substring(1,tmpStr1[1].length()-1).split(",");
                         for(String x:tmpStr2){
-                            //System.out.println(x);
                             seatStatus[Integer.parseInt(x)]=1;
                         }
                      }

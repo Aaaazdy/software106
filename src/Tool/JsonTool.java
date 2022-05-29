@@ -36,7 +36,6 @@ public class JsonTool
         buffReader.close();
 
         Gson gson = new Gson();
-        System.out.println(jsonString);
         return gson.fromJson(jsonString, BookingInformation.class);
     }
 /*    public static void main(String args[]) throws IOException {

@@ -57,7 +57,6 @@ public class CheckinController implements Controller{
                     boolean valid=true;
 
                     String input=checkinView.getInput;
-                    System.out.println(input);
                     int inputNo=0;
                     try {
                         inputNo=Integer.parseInt(input);

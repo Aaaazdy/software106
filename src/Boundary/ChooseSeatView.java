@@ -385,22 +385,22 @@ public class ChooseSeatView extends JPanel
                 switch (selectNo % 3)
                 {
                     case 1:
-                        return selectNo + "A";
+                        return ((selectNo-1)/3+1) + "A,"+selectNo;
                     case 2:
-                        return selectNo + "B";
+                        return ((selectNo-1)/3+1) + "B,"+selectNo;
                     case 0:
-                        return selectNo + "C";
+                        return ((selectNo-1)/3+1) + "C,"+selectNo;
                 }
             } else
             {
                 switch (selectNo % 3)
                 {
                     case 1:
-                        return selectNo + "D";
+                        return ((selectNo-1-30)/3+1) + "D,"+selectNo;
                     case 2:
-                        return selectNo + "E";
+                        return ((selectNo-1-30)/3+1) + "E,"+selectNo;
                     case 0:
-                        return selectNo + "F";
+                        return ((selectNo-1-30)/3+1) + "F,"+selectNo;
                 }
             }
             return "None error!";
@@ -425,26 +425,26 @@ public class ChooseSeatView extends JPanel
                 switch (selectNo % 4)
                 {
                     case 1:
-                        return selectNo + "A";
+                        return ((selectNo-1)/4+1) + "A,"+selectNo;
                     case 2:
-                        return selectNo + "B";
+                        return ((selectNo-1)/4+1) + "B,"+selectNo;
                     case 3:
-                        return selectNo + "C";
+                        return ((selectNo-1)/4+1) + "C,"+selectNo;
                     case 0:
-                        return selectNo + "D";
+                        return ((selectNo-1)/4+1) + "D,"+selectNo;
                 }
             } else
             {
                 switch (selectNo % 4)
                 {
                     case 1:
-                        return selectNo + "E";
+                        return ((selectNo-1-48)/4+1) + "E,"+selectNo;
                     case 2:
-                        return selectNo + "F";
+                        return ((selectNo-1-48)/4+1) + "F,"+selectNo;
                     case 3:
-                        return selectNo + "G";
+                        return ((selectNo-1-48)/4+1) + "G,"+selectNo;
                     case 0:
-                        return selectNo + "H";
+                        return ((selectNo-1-48)/4+1) + "H,"+selectNo;
                 }
             }
             return "None error!";

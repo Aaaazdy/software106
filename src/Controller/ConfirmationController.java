@@ -62,6 +62,7 @@ public class ConfirmationController implements Controller{
                         try {
                             FileReaderWriter.passDatatoPrinter(bookingInformation);
                             FileReaderWriter.setCheckinStatus(bookingInformation);
+                            FileReaderWriter.setSeatstatus(bookingInformation);
                         } catch (IOException ex) {
                             throw new RuntimeException(ex);
                         }

@@ -15,12 +15,45 @@ public class FileReaderWriter {
 
     private static String flightDataFiles = "data//flightData//";
 
-    private static String passengerDataFiles = "test.txt";
+
+
+
+    /**
+     * Write the seat selected by the user into the data of the aircraft.
+     * When the subsequent user checks in, this seat will be regarded as unselectable.
+     * @param bookingInformation entity object contains the passenger's information
+     */
+    public static void setSeatstatus(BookingInformation bookingInformation) throws IOException {
+        File file = new File(flightDataFiles);
+        File[] files = file.listFiles();
+        ArrayList<String> newLines = new ArrayList<String>();
+        String filePath="";
+
+
+        for (int i = 0; i < files.length; i++) {
+
+
+            if(files[i].getName().equals(bookingInformation.getFlightNumber()+".json")){
+                filePath=files[i].getPath();
+                for (String line : Files.readAllLines(Paths.get(filePath), StandardCharsets.UTF_8)) {
+                    if (line.contains("selectedSeat")) {
+                        String tmpString=line.substring(0,line.length()-2)+","+bookingInformation.getSeatHelpNumber()+"\"";
+                        newLines.add(tmpString);
+                    }else {
+                        newLines.add(line);
+                    }
+                }
+            }
+        }
+
+        Files.write(Paths.get(filePath), newLines, StandardCharsets.UTF_8);
+    }
 
 
     /**
      * set the checkin status to false
      * write the booking information to the checkin database
+     * @param bookingInformation entity object contains the passenger's information
      */
     public static void setCheckinStatus(BookingInformation bookingInformation) throws IOException {
         String fileName=bookingInformation.getFilePath();
@@ -52,6 +85,7 @@ public class FileReaderWriter {
 
     /**
      * write the booking information to the printer
+     * @param bookingInformation entity object contains the passenger's information
      */
     public static void passDatatoPrinter(BookingInformation bookingInformation) throws IOException{
         String path=printerDataFiles;
@@ -76,7 +110,7 @@ public class FileReaderWriter {
 
 
     /**
-     *
+     * Use the entered predetermined number to find the files in the database, and write all the matching results into the list.
      * @param inputBookingNo the user input booking number
      * @param bookingInfoList entity objects list to hold the information
      * @return whether found the booking number in the database
@@ -132,7 +166,7 @@ public class FileReaderWriter {
     }
 
     /**
-     *
+     * According to the family name and ID number, and write the result into the list.
      * @param inputSurName the user input name
      * @param inputIDno    the user input IDno
      * @param bookingInfoList entity objects list to hold the information
@@ -191,6 +225,7 @@ public class FileReaderWriter {
         }
     }
     /**
+     * Enter the flight number, check the seat status of this flight, and write the result into the array.
      * @param inputFlightNo the flight number to search
      * @return whether found the booking number in the database
      * @throws IOException
@@ -220,6 +255,12 @@ public class FileReaderWriter {
         }
     }
 
+    /**
+     * Use the flight number to check the aircraft model and return the aircraft model.
+     * @param inputFlightNo
+     * @return  The model of the aircraft, 1 represents A220 , 2 represents A320
+     * @throws IOException
+     */
     public static int getPlaneModel(String inputFlightNo) throws IOException {
         File file = new File(flightDataFiles);
         File[] files = file.listFiles();

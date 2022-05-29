@@ -13,14 +13,6 @@ public class JsonTool
     public JsonTool( )
     {
         Gson gson = new Gson();
-        try
-        {
-            DataOutputStream out = new DataOutputStream(new FileOutputStream(".\\BookingInformation.txt"));
-        } catch (Exception e)
-        {
-
-        }
-
     }
 
     public BookingInformation createBookingInfo(String tmpPath) throws IOException {

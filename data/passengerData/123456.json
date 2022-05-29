@@ -11,12 +11,12 @@
   "destWhere":"Birmingham",
   "duringTime":"20:30-00:40(+1)",
   "checkin":true,
-  "seat":"11B",
-  "primaryFood":"Beef noodles",
+  "seat":"12E",
+  "primaryFood":"Sandwich",
   "credFirst":"null",
   "credSecond":"null",
   "credNumber":"null",
   "securCode":"null",
-  "extraServiceFee":10,
-  "extraService":"moviePlayer,"
+  "extraServiceFee":0,
+  "extraService":""
 }

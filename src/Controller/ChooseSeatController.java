@@ -74,8 +74,10 @@ public class ChooseSeatController implements Controller{
                         JOptionPane.showMessageDialog(null, "MessageDialog", "Error", JOptionPane.ERROR_MESSAGE);
                     } else {
                         // set the seatNo
-                        System.out.println(chooseSeatView.getSelectedSeatNo(planemodel));
-                        bookingInformation.setSeat(chooseSeatView.getSelectedSeatNo(planemodel));
+                        String tmpSeatString=chooseSeatView.getSelectedSeatNo(planemodel);
+                        String[] twoSeatValue=tmpSeatString.split(",");
+                        bookingInformation.setSeat(twoSeatValue[0]);
+                        bookingInformation.setSeatHelpNumber(Integer.parseInt(twoSeatValue[1]));
                         startNextPage();
                         // new MealSelect(c1).setVisible(true);
                         frame.setVisible(false);

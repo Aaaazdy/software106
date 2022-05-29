@@ -5,7 +5,6 @@ import java.util.LinkedList;
 public class BookingInformation{
 
     private String filePath;
-    private String flightNo;
     private String startWhere;
     private String destWhere;
     private String duringTime;
@@ -23,6 +22,8 @@ public class BookingInformation{
     private String credNumber;
     private String securCode;
     private int extraServiceFee;
+
+    private int seatHelpNumber;// Auxiliary variables used to record seat numbers
     private LinkedList<String> extraService = new LinkedList<String>();
     public BookingInformation(){
         firstName = "firstName";
@@ -148,9 +149,6 @@ public class BookingInformation{
         extraService.add(item);
     }
 
-    public String getFlightNo() {
-        return flightNo;
-    }
 
     public String getStartWhere() {
         return startWhere;
@@ -177,9 +175,6 @@ public class BookingInformation{
         return retString;
     }
 
-    public void setFlightNo(String flightNo) {
-        this.flightNo = flightNo;
-    }
 
     public void setStartWhere(String startWhere) {
         this.startWhere = startWhere;
@@ -211,6 +206,14 @@ public class BookingInformation{
 
     public void setFilePath(String filePath) {
         this.filePath = filePath;
+    }
+
+    public int getSeatHelpNumber() {
+        return seatHelpNumber;
+    }
+
+    public void setSeatHelpNumber(int seatHelpNumber) {
+        this.seatHelpNumber = seatHelpNumber;
     }
 
 }

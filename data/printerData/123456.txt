@@ -1,7 +1,0 @@
-Name:Tom Shelby
-Flight number:FF960
-Boarding gate:20A
-Seat:11B
-Departure:London
-Destination:Birmingham
-During Time:20:30-00:40(+1)

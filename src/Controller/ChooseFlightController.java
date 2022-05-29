@@ -1,28 +1,32 @@
 package Controller;
 
-import Boundary.CheckinView;
 import Boundary.ChooseFlightView;
-import Boundary.ConfirmationView;
 import Entity.BookingInformation;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * The controller of choose flight page
+ */
 public class ChooseFlightController implements Controller {
     private ChooseFlightView chooseFlightView;
 
 
     public ArrayList<BookingInformation> bookingInfoList;
 
-
+    /**
+     * Constructor of page controller
+     */
     public ChooseFlightController(ArrayList<BookingInformation> bookingInfos){
         chooseFlightView =new ChooseFlightView();
         bookingInfoList=bookingInfos;
     }
-
+    /**
+     * lunch page method
+     */
     public void startPage(){
         JFrame frame =new JFrame("British Airways");
         frame.setSize(525,380);
@@ -55,10 +59,14 @@ public class ChooseFlightController implements Controller {
     public void startLastPage() {
         new CheckinController().startPage();
     }
+
     public void startNextPage(BookingInformation bookingInfo) {
         new ChooseSeatController(bookingInfoList,bookingInfo).startPage();
     }
 
+    /**
+     * Add the information of booked flights to the page
+     */
     private void addFlightInfo(){
         int cnt=1;
         for(BookingInformation x:bookingInfoList){

@@ -7,12 +7,22 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The controller of welcome  page
+ */
 public class WelcomeController implements Controller{
     private WelcomeView welcomeView;
 
+    /**
+     * Constructor of page controller
+     */
     public WelcomeController(){
         welcomeView=new WelcomeView();
     }
+
+    /**
+     * lunch page method
+     */
     public void startPage(){
         JFrame frame =new JFrame("British Airways");
         frame.setSize(525,380);

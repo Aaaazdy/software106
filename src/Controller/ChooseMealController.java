@@ -8,12 +8,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * The controller of choose meal page
+ */
 public class ChooseMealController implements Controller{
     ChooseMealView chooseMealView;
 
     BookingInformation bookingInformation;
 
     ArrayList<BookingInformation> bookingInformationList;
+    /**
+     * Constructor of page controller
+     * @param bookingInformationArrayList all the booked flight information
+     * @param bookingInfo the flight information that is under checkin
+     */
     public ChooseMealController(ArrayList<BookingInformation> bookingInformationArrayList, BookingInformation bookingInfo){
         chooseMealView=new ChooseMealView();
         bookingInformationList=bookingInformationArrayList;

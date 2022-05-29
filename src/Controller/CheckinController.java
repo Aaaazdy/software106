@@ -10,17 +10,26 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.ArrayList;
+/**
+ * The controller of checkin  page
+ */
 public class CheckinController implements Controller{
     private CheckinView checkinView;
 
     public  ArrayList<BookingInformation> bookingInfoList;
 
 
+    /**
+     * Constructor of page controller
+     */
     public CheckinController(){
         checkinView=new CheckinView();
         bookingInfoList=new ArrayList<BookingInformation>();
     }
 
+    /**
+     * lunch page method
+     */
     public void startPage(){
         JFrame frame =new JFrame("British Airways");
         frame.setSize(525,380);
@@ -118,6 +127,10 @@ public class CheckinController implements Controller{
     public void startLastPage() {
         new WelcomeController().startPage();
     }
+
+    /**
+     * start use id card number to check in page
+     */
     public void startIDCardCheckPage(){
         new IDNoCheckinController().startPage();
     }

@@ -8,6 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * The controller of credit card information input page
+ */
 public class CreditCardController implements Controller{
 
     CreditcardView creditcardView;
@@ -16,12 +19,20 @@ public class CreditCardController implements Controller{
 
     BookingInformation bookingInformation;
 
+    /**
+     * Constructor of page controller
+     * @param bookingInformationArrayList all the booked flight information
+     * @param bookingInfo the flight information that is under checkin
+     */
     public CreditCardController(ArrayList<BookingInformation> bookingInformationArrayList, BookingInformation bookingInfo){
         creditcardView=new CreditcardView();
         bookingInformationList=bookingInformationArrayList;
         bookingInformation=bookingInfo;
     }
 
+    /**
+     * lunch page method
+     */
     public void startPage(){
         JFrame frame =new JFrame("British Airways");
         frame.setSize(525,380);

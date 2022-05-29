@@ -11,12 +11,20 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The controller of confirmation page
+ */
 public class ConfirmationController implements Controller{
     private ConfirmationView confirmationView;
     public BookingInformation bookingInformation;
 
     public ArrayList<BookingInformation> bookingInformationList;
 
+    /**
+     * Constructor of page controller
+     * @param bookingInformationArrayList all the booked flight information
+     * @param bookingInfo the flight information that is under checkin
+     */
     public ConfirmationController(ArrayList<BookingInformation> bookingInformationArrayList, BookingInformation bookingInfo){
         bookingInformationList=bookingInformationArrayList;
         bookingInformation=bookingInfo;
@@ -25,6 +33,9 @@ public class ConfirmationController implements Controller{
 
     }
 
+    /**
+     * lunch page method
+     */
     public void startPage(){
         JFrame frame =new JFrame("British Airways");
         frame.setSize(525,380);
@@ -68,6 +79,9 @@ public class ConfirmationController implements Controller{
         new AdditionalServiceController(bookingInformationList,bookingInformation).startPage();
     }
 
+    /**
+     * Use this method to set the content of the table,show all the user's checkin related information
+     */
     private void setTable(){
         String[] columnName = {"Information", " "};
         String[][] rowData = {

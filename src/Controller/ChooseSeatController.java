@@ -10,6 +10,9 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The controller of choose seat page
+ */
 public class ChooseSeatController implements Controller{
 
     int seatcount; // to record whether a seat is selected
@@ -20,6 +23,11 @@ public class ChooseSeatController implements Controller{
     ArrayList<BookingInformation> bookingInformationList;
 
     BookingInformation bookingInformation;
+    /**
+     * Constructor of page controller
+     * @param bookingInformationArrayList all the booked flight information
+     * @param bookingInfo the flight information that is under checkin
+     */
     public ChooseSeatController(ArrayList<BookingInformation> bookingInformationArrayList,BookingInformation bookingInfo){
         bookingInformationList=bookingInformationArrayList;
         bookingInformation=bookingInfo;
@@ -30,6 +38,9 @@ public class ChooseSeatController implements Controller{
 
     }
 
+    /**
+     * lunch page method
+     */
     public void startPage(){
         JFrame frame =new JFrame("British Airways");
 

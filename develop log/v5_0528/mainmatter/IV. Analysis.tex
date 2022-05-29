@@ -1,0 +1,250 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{iv-analysis}{%
+\section{IV. Analysis}\label{iv-analysis}}
+
+\hypertarget{41-identify-boundarycontrollerentity-and-tool-classes}{%
+\subsection{4.1 Identify Boundary,Controller,Entity, and Tool
+classes}\label{41-identify-boundarycontrollerentity-and-tool-classes}}
+
+We separated the source codes of the project into 4 parts:
+Boundary,Controller,Entity, and Tool classes.
+
+\hypertarget{411-boundary-class}{%
+\subsubsection{4.1.1 Boundary Class}\label{411-boundary-class}}
+
+The boundary class shoulders the responsibility for presenting our
+Graphic User Interface , listening to their actions, and interacting
+with them. The boundary class is at the top of our software architecture
+and only interacts with the controller classes, making our software
+loose coupling. In our system, the boundary classes include:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ AdditionalServiceView.java}
+\NormalTok{ CheckinView.java}
+\NormalTok{ ChooseFlightView.java}
+\NormalTok{ ChooseMealView.java}
+\NormalTok{ ChooseSeatView.java}
+\NormalTok{ ConfirmationView.java}
+\NormalTok{ CreditcardView.java}
+\NormalTok{ IDNoCheckinView.java}
+\NormalTok{ WelcomeView.java}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{412-controller-class}{%
+\subsubsection{4.1.2 Controller Class}\label{412-controller-class}}
+
+We use the controller class to link the Boundary class to the Entity
+class, which processes data requests sent by the Boundary class and
+linking to the corresponding JSON-data file based on the content of the
+request. After getting the data from the JSON-data file in the project,
+it parses the return packet and returns the specific data to the
+Boundary class. In our system, the controller classes include:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{AdditionalServiceController.java}
+\NormalTok{CheckinController.java}
+\NormalTok{ChooseFlightController.java}
+\NormalTok{ChooseMealController.java}
+\NormalTok{ChooseSeatController.java}
+\NormalTok{ConfirmationController.java}
+\NormalTok{Controller.java}
+\NormalTok{CreditCardController.java}
+\NormalTok{IDNoCheckinController.java}
+\NormalTok{WelcomeController.java}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{413-entity-class}{%
+\subsubsection{4.1.3 Entity Class}\label{413-entity-class}}
+
+The entity class in our project manages the data administration. It
+consists of the basic data structure of the passengers data and all the
+get and set methods to modify and search. In our system, entity class
+includes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{BookingInformation.java}
+\end{Highlighting}
+\end{Shaded}
+
+The get and set methods include:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+     \FunctionTok{getFirstName}\OperatorTok{()}
+	 \FunctionTok{setFirstName}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getLastName}\OperatorTok{()}
+	 \FunctionTok{setLastName}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getFlightNumber}\OperatorTok{()}
+	 \FunctionTok{setFlightNumber}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getBoardingTime}\OperatorTok{()}
+	 \FunctionTok{setBoardingTime}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getBoardingGate}\OperatorTok{()}
+	 \FunctionTok{setBoardingGate}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getSeat}\OperatorTok{()}
+	 \FunctionTok{setSeat}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getPrimaryFood}\OperatorTok{()}
+	 \FunctionTok{setPrimaryFood}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getCredFirst}\OperatorTok{()}
+	 \FunctionTok{setCredFirst}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getCredSecond}\OperatorTok{()}
+	 \FunctionTok{setCredSecond}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getCredNumber}\OperatorTok{()}
+	 \FunctionTok{setCredNumber}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getSecurCode}\OperatorTok{()}
+	 \FunctionTok{setSecurCode}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{setExtraServiceFee}\OperatorTok{(}\DataTypeTok{int}\OperatorTok{)}
+	 \FunctionTok{getExtraServiceFee}\OperatorTok{()}
+	 \FunctionTok{setExtraService}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getStartWhere}\OperatorTok{()}
+	 \FunctionTok{getDestWhere}\OperatorTok{()}
+	 \FunctionTok{getDuringTime}\OperatorTok{()}
+	 \FunctionTok{getBookingNo}\OperatorTok{()}
+	 \FunctionTok{getExtraService}\OperatorTok{()}
+	 \FunctionTok{setStartWhere}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{setDestWhere}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{setDuringTime}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{setBookingNo}\OperatorTok{(}\DataTypeTok{int}\OperatorTok{)}
+	 \FunctionTok{getIdNo}\OperatorTok{()}
+	 \FunctionTok{setIdNo}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getFilePath}\OperatorTok{()}
+	 \FunctionTok{setFilePath}\OperatorTok{(}\BuiltInTok{String}\OperatorTok{)}
+	 \FunctionTok{getSeatHelpNumber}\OperatorTok{()}
+	 \FunctionTok{setSeatHelpNumber}\OperatorTok{(}\DataTypeTok{int}\OperatorTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{414-tool-class}{%
+\subsubsection{4.1.4 Tool class}\label{414-tool-class}}
+
+The Tool class handles the file reading and file writing for the JSON
+files which store the data as a database. \texttt{FileReaderWriter}
+class handles the Java file reading and writing, while \texttt{JsonTool}
+handles the conversion of data into JSON to store. The Tool classes
+include:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ FileReaderWriter.java}
+\NormalTok{ FileReaderWriterTest.java}
+\NormalTok{ JsonTool.java}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{42-conceptual-class-diagram}{%
+\subsection{4.2 Conceptual Class
+Diagram}\label{42-conceptual-class-diagram}}
+
+Having analyzed the relationships and associations between classes, we
+drew the conceptual dia-gram. (Click here to view the whole Conceptual
+Class Diagram)
+
+\hypertarget{43-reusability}{%
+\subsection{4.3 Reusability}\label{43-reusability}}
+
+To make our code re-usable, we store our data in an appropriate data
+structure and design our code following the design process. For example,
+we create JSON file \texttt{checkinData}to store all the check in
+data,\texttt{flightData} file to store all the plane information, and
+\texttt{passengerData} file to store the passengers data. Thus, the code
+can easily adapt to changes, the system can add new categories and new
+membership is up a notch by just modifying the JSON file.\\
+Besides, the methodology we used to store data into JSON file is just a
+new way to store the data aside from sql-database technique.
+
+\end{document}

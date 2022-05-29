@@ -31,13 +31,11 @@ public class FileReaderWriter {
 
 
         for (int i = 0; i < files.length; i++) {
-
-
             if(files[i].getName().equals(bookingInformation.getFlightNumber()+".json")){
                 filePath=files[i].getPath();
                 for (String line : Files.readAllLines(Paths.get(filePath), StandardCharsets.UTF_8)) {
                     if (line.contains("selectedSeat")) {
-                        String tmpString=line.substring(0,line.length()-2)+","+bookingInformation.getSeatHelpNumber()+"\"";
+                        String tmpString=line.substring(0,line.length()-1)+","+bookingInformation.getSeatHelpNumber()+"\"";
                         newLines.add(tmpString);
                     }else {
                         newLines.add(line);
@@ -220,6 +218,7 @@ public class FileReaderWriter {
             JsonTool tool=new JsonTool();
             for(String tmpPath:foundPath){
                 bookingInfoList.add(tool.createBookingInfo(tmpPath));
+                bookingInfoList.get(bookingInfoList.size()-1).setFilePath(tmpPath);
             }
             return true;
         }

@@ -92,27 +92,31 @@ public class CheckinController implements Controller{
                     frame.dispose();
                     startIDCardCheckPage();
 
+
                 }
                 else if(eventSource.equals(checkinView.button4))   //use scan ID card method
                 {
                     //close this page and go to next page
-                    int inputNo=123456;
+                    String inputSurname="Shelby";
+                    String inputIDNumber="123123123";
                     boolean valid=false;
                     try {
-                        //valid=searchBookingNo(inputNo);
-                        valid= FileReaderWriter.searchBookingNo(inputNo,bookingInfoList);
+                        //valid=searchBooingInfo(inputSurname,inputIDNumber);
+                        valid= FileReaderWriter.searchBooingInfo(inputSurname,inputIDNumber,bookingInfoList);
                     } catch (IOException ex) {
-                        System.out.println("error in search inputNO! ID card Scan");
+                        throw new RuntimeException(ex);
                     }
-                    if(valid){ //if found the bookingNo
+
+                    if(!valid){
+                        checkinView.label4.setText("Can not identify you ID card!");
+                        checkinView.label4.setVisible(true);
+                        return ;
+                    }
+                    else{
+                        //close this page and go to next page
                         frame.setVisible(false);
                         frame.dispose();
                         startNextPage();
-                    }
-                    else{ // if Does not found the bookingNo
-                        checkinView.label4.setText("Can not identify you ID card!");
-                        checkinView.label4.setVisible(true);
-                        return;
                     }
                 }
             }

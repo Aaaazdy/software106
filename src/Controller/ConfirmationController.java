@@ -41,6 +41,7 @@ public class ConfirmationController implements Controller{
         frame.setSize(525,380);
         frame.getContentPane().add(confirmationView);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         confirmationView.addActionListener(new ActionListener() {
             @Override

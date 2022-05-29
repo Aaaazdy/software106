@@ -35,6 +35,7 @@ public class IDNoCheckinController implements Controller{
         frame.setSize(525,380);
         frame.getContentPane().add(idNoCheckinView);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         idNoCheckinView.addActionListener(new ActionListener() {
             @Override

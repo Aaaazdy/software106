@@ -28,7 +28,7 @@ public class WelcomeController implements Controller{
         frame.setSize(525,380);
         frame.getContentPane().add(welcomeView);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         welcomeView.addActionListener(new ActionListener() {
             @Override

@@ -38,6 +38,7 @@ public class CreditCardController implements Controller{
         frame.setSize(525,380);
         frame.getContentPane().add(creditcardView);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         creditcardView.addActionListener(new ActionListener() {
             @Override

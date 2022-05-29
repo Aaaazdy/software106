@@ -35,6 +35,7 @@ public class CheckinController implements Controller{
         frame.setSize(525,380);
         frame.getContentPane().add(checkinView);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         frame.requestFocus();
         checkinView.addActionListener(new ActionListener() {

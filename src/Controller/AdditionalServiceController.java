@@ -38,6 +38,7 @@ public class AdditionalServiceController implements Controller{
         frame.setSize(525,380);
         frame.getContentPane().add(additionalServiceView);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         additionalServiceView.addActionListener(new ActionListener() {
             @Override

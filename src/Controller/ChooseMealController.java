@@ -33,6 +33,7 @@ public class ChooseMealController implements Controller{
         frame.setSize(525,380);
         frame.getContentPane().add(chooseMealView);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
         /**

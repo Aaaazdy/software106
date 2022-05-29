@@ -32,6 +32,7 @@ public class ChooseFlightController implements Controller {
         frame.setSize(525,380);
         frame.getContentPane().add(chooseFlightView);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         addFlightInfo();
         frame.setVisible(true);
         chooseFlightView.addActionListener(new ActionListener() {

@@ -87,6 +87,10 @@ public class Creditcard extends JFrame implements ActionListener
                 JOptionPane.ERROR_MESSAGE);
     }
 
+    
+    /** 
+     * @return boolean
+     */
     //
     // When this method is called,it will check that weather all the information has been input
     //@param values all the information that needed to complete

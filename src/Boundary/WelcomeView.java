@@ -14,6 +14,10 @@ public class WelcomeView extends JPanel{
     public JLabel lable1;
 
     private List<ActionListener> listeners;
+    
+    /** 
+     * @param actionlistener
+     */
     public void addActionListener(ActionListener actionlistener){
         listeners.add(actionlistener);
     }

@@ -1,16 +1,18 @@
 package Tool;
 
 import Entity.BookingInformation;
-import org.junit.jupiter.api.Assertions;
+
+import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class FileReaderWriterTest {
 
-    @org.junit.jupiter.api.Test
+    
+    /** 
+     * @throws IOException
+     */
     void searchBookingNo() throws IOException {
         ArrayList<BookingInformation> bookingInfo=new ArrayList<BookingInformation>();
         boolean x1=FileReaderWriter.searchBookingNo(123456,bookingInfo);
@@ -24,7 +26,10 @@ class FileReaderWriterTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    
+    /** 
+     * @throws IOException
+     */
     void searchBooingInfo() throws IOException {
         ArrayList<BookingInformation> bookingInfo=new ArrayList<BookingInformation>();
         boolean x1=FileReaderWriter.searchBooingInfo("Shelby","123123123",bookingInfo);

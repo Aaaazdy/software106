@@ -28,6 +28,10 @@ public class CheckinView extends JPanel {
 
     public String getInput;
     private List<ActionListener> listeners;
+    
+    /** 
+     * @param actionlistener
+     */
     public void addActionListener(ActionListener actionlistener){
         listeners.add(actionlistener);
     }

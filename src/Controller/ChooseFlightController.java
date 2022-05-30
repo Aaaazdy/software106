@@ -61,6 +61,10 @@ public class ChooseFlightController implements Controller {
         new CheckinController().startPage();
     }
 
+    
+    /** 
+     * @param bookingInfo
+     */
     public void startNextPage(BookingInformation bookingInfo) {
         new ChooseSeatController(bookingInfoList,bookingInfo).startPage();
     }

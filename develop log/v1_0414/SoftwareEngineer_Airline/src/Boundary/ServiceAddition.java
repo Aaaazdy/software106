@@ -116,6 +116,10 @@ public class ServiceAddition extends JFrame implements ActionListener
                 JOptionPane.ERROR_MESSAGE);
     }
 
+    
+    /** 
+     * @param count
+     */
     public void showMessage4(int count)
     {
         JOptionPane.showMessageDialog(this, "The total money is :  " + count + "$", "the choosed services",

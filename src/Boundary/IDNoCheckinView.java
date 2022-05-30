@@ -35,6 +35,10 @@ public class IDNoCheckinView extends JPanel{
 
     private List<ActionListener> listeners;
 
+    
+    /** 
+     * @param actionlistener
+     */
     public void addActionListener(ActionListener actionlistener){
         listeners.add(actionlistener);
     }

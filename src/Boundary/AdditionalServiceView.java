@@ -24,6 +24,10 @@ public class AdditionalServiceView extends JPanel{
     public int checkCount = 0;//used to count the total money
     private List<ActionListener> listeners;
 
+    
+    /** 
+     * @param actionlistener
+     */
     public void addActionListener(ActionListener actionlistener){
         listeners.add(actionlistener);
     }
@@ -135,6 +139,10 @@ public class AdditionalServiceView extends JPanel{
                 JOptionPane.ERROR_MESSAGE);
     }
 
+    
+    /** 
+     * @param count
+     */
     public void showMessage4(int count)
     {
         JOptionPane.showMessageDialog(this, "The total money is :  " + "$" + count , "the choosed services",

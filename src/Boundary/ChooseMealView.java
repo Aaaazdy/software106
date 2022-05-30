@@ -21,6 +21,10 @@ public class ChooseMealView extends JPanel{
     public String selectedItem;//used to store the item of the checkbox
     private List<ActionListener> listeners;
 
+    
+    /** 
+     * @param actionlistener
+     */
     public void addActionListener(ActionListener actionlistener){
         listeners.add(actionlistener);
     }
@@ -105,6 +109,10 @@ public class ChooseMealView extends JPanel{
         add(p4);
         add(p5);
     }
+    
+    /** 
+     * @return boolean
+     */
     public boolean check(){
         boolean selected=false;
         if (Beefnoodles.isSelected()){

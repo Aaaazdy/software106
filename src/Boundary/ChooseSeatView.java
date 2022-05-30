@@ -30,6 +30,10 @@ public class ChooseSeatView extends JPanel
     public JButton button2;//back button
     private List<ActionListener> listeners;
 
+    
+    /** 
+     * @param actionlistener
+     */
     public void addActionListener(ActionListener actionlistener)
     {
         listeners.add(actionlistener);
@@ -349,6 +353,10 @@ public class ChooseSeatView extends JPanel
         }
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean checkValidity()
     {
 

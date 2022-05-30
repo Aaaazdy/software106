@@ -15,6 +15,12 @@ public class JsonTool
         Gson gson = new Gson();
     }
 
+    
+    /** 
+     * @param tmpPath
+     * @return BookingInformation
+     * @throws IOException
+     */
     public BookingInformation createBookingInfo(String tmpPath) throws IOException {
 
         FileInputStream fin = new FileInputStream(tmpPath);

@@ -362,6 +362,11 @@ public class ChooseSeatView extends JPanel
         }
     }
 
+    /**
+     *
+     * @param planemodel 1 or 2 ,represent 2 different plane modle
+     * @return "seatNo(type1),seatNo(type2)", same number in different type ,will be used in different place next
+     */
     public String getSelectedSeatNo(int planemodel)
     {
         if (planemodel == 1)

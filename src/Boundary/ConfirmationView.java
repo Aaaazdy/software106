@@ -26,7 +26,6 @@ public class ConfirmationView extends JPanel {
         listeners.add(actionlistener);
     }
 
-
     public ConfirmationView(){
         listeners=new ArrayList<ActionListener>();
 

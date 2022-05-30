@@ -226,7 +226,6 @@ public class FileReaderWriter {
     /**
      * Enter the flight number, check the seat status of this flight, and write the result into the array.
      * @param inputFlightNo the flight number to search
-     * @return whether found the booking number in the database
      * @throws IOException
      */
     public static void searchFlightInfo(String inputFlightNo,int[] seatStatus) throws IOException {

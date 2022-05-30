@@ -142,8 +142,10 @@ public class AdditionalServiceView extends JPanel{
     }
 
 
-    //function check() is used to check whether the checkbox is selected, if true,
-    //the select items will be stored into LinkList<String> content
+    /**
+     * function check() is used to check whether the checkbox is selected, if true,
+     * the select items will be stored into LinkList content
+     */
     public void check()
     {
         Iterator<String> iter=content.iterator();
@@ -162,8 +164,11 @@ public class AdditionalServiceView extends JPanel{
         }
     }
 
-    //function count() is used to count and illustrate the overall money
-    //of the additional service on the screen
+    /**
+     *     function count() is used to count and illustrate the overall money
+     *     of the additional service on the screen
+     */
+
     public void count()
     {
         checkCount = 0;

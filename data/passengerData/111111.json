@@ -1,0 +1,21 @@
+{
+  "BookingNo":111111,
+  "firstName":"Ming",
+  "lastName":"Li",
+   "idNo":"321321321",
+  "flightNumber":"FF960",
+  "boardingTime":"2022-4-17 20:00",
+  "boardingGate":"20A",
+  "startWhere":"London",
+  "destWhere":"Birmingham",
+  "duringTime":"20:30-00:40(+1)",
+  "checkin":false,
+  "seat":"12A",
+  "primaryFood":"Box lunch",
+  "credFirst":"123",
+  "credSecond":"321",
+  "credNumber":"12",
+  "securCode":"3",
+  "extraServiceFee":2,
+  "extraService":"cola,"
+}

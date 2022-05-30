@@ -1,0 +1,21 @@
+{
+  "BookingNo":222222,
+  "firstName":"Wei",
+  "lastName":"Wang",
+   "idNo":"111222333",
+  "flightNumber":"AC1270",
+  "boardingTime":"2022-4-18 20:00",
+  "boardingGate":"20D",
+  "startWhere":"Birmingham",
+  "destWhere":"London",
+  "duringTime":"20:30-00:40(+1)",
+  "checkin":false,
+  "seat":"1B",
+  "primaryFood":"Box lunch",
+  "credFirst":"null",
+  "credSecond":"null",
+  "credNumber":"null",
+  "securCode":"null",
+  "extraServiceFee":0,
+  "extraService":""
+}

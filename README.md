@@ -136,6 +136,7 @@ Passengers enter:
 #### Confirmation Page
 
 The last is the confirmation page:
+
 <img src="image11.png" width="500"/>
 
 #### System Flow Summary
